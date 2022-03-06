@@ -81,17 +81,28 @@ function deletePost(){
 // create4Post( {title:"fourth",body:"hello second post"},createPost);
 
 
-createPostPromiss({  title:"third", body:"hello second post",createdtime:new Date().getTime()})
-.then(getPost)
-.then(deletion)
-.catch(error=>{
-    console.log(error)
-})
+
+const creatpostbyAsync=async()=>{
+   await createPostPromiss({  title:"third", body:"hello second post",createdtime:new Date().getTime()})
+
+   getPost
+  deletion;
+
+
+}
+creatpostbyAsync()
+
+// createPostPromiss({  title:"third", body:"hello second post",createdtime:new Date().getTime()})
+// .then(getPost)
+// .then(deletion)
+// .catch(error=>{
+//     console.log(error)
+// })
 
 function deletion(){
-    deletePost()
-    deletePost()
-    deletePost()
+    // deletePost()
+    // deletePost()
+    // deletePost()
 }
 
 const users=[
@@ -103,31 +114,31 @@ const users=[
 
 ]
 
-function updateLastUserActivityTime(){
+// function updateLastUserActivityTime(){
 
-   return new Promise((resolve,reject)=>{
+//    return new Promise((resolve,reject)=>{
 
 
 
-    setTimeout(()=>{
-       this.users.forEach((user,indes)=>{
-            user.activityTime=new Date().getTime()
-        })
+//     setTimeout(()=>{
+//        this.users.forEach((user,indes)=>{
+//             user.activityTime=new Date().getTime()
+//         })
     
-    },)
+//     },)
 
        
-   }) 
+//    }) 
 
-}
+// }
 
 
 //-------PROMISE ALL-----
 
-function userandpostUpdate(){
-    Promise.all([createPostPromiss,updateLastUserActivityTime]).then(res=>{
-        console.log(res)
-    }).then(deletePost)
-}
-updateLastUserActivityTime()
-console.log(post)
+// function userandpostUpdate(){
+//     Promise.all([createPostPromiss,updateLastUserActivityTime]).then(res=>{
+//         console.log(res)
+//     }).then(deletePost)
+// }
+// updateLastUserActivityTime()
+// console.log(post)
