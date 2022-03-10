@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
 
-class Node{
+class Node {
   int data;
   Node left ,right;
   }
@@ -19,9 +21,6 @@ class Node{
   
       if(root==null){
         root=temp;
-     
-        
-  
       }
       else{
         temp2=root;
@@ -70,16 +69,53 @@ class Node{
     search(r.left, k);
     search(r.right, k);
   }
+
+  //iterative apporach
+  public void levelOrder(Node root) {
+        
+    Queue<Node> q=new LinkedList<Node>();
+   if(root==null){
+       return ;
+   }
+   
+   q.add(root);
+   while(!q.isEmpty()){
+     
+       int n=q.size();
+       for(int i=0;i<n;i++){
+          
+            Node curr=q.poll();
+       System.out.print(curr.val);
+         
+       
+       if(curr.left!=null){
+           q.add(curr.left);
+           
+       }
+       if(curr.right!=null){
+           q.add(curr.right);
+       }
+       }
+     
+          
+     
+       System.out.println();
+       
+       
+       
+   }
+  
+   
+}
+
+
+
    
   public void SearchK(int k){
     search(root,k);
     }
   
   }
-  
-
-
- 
   
   public class BSTApp{
     public static void main(String[] args){
@@ -96,3 +132,5 @@ class Node{
      
     }
   }
+
+  
